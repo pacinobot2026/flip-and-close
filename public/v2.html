@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Flip And Close — Stop Losing Money On Domain Auctions</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Source Sans 3',sans-serif;background:#111;color:#f0f0f0;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+
+/* ALERT BAR */
+.alert{background:#e85d04;padding:12px 24px;text-align:center;font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.05em;color:#fff;}
+.alert em{color:#fff200;font-style:normal;}
+
+/* NAV */
+nav{background:#000;border-bottom:3px solid #e85d04;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:.08em;color:#fff;}
+.logo em{color:#e85d04;font-style:normal;}
+.nav-btn{background:#e85d04;color:#fff;font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:600;padding:9px 22px;border-radius:4px;letter-spacing:.05em;}
+
+/* HERO */
+.hero{background:#000;border-bottom:4px solid #e85d04;padding:60px 24px 50px;text-align:center;}
+.kicker{display:inline-block;background:#e85d04;color:#fff;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.12em;padding:5px 14px;margin-bottom:20px;}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,5.5vw,4.2rem);font-weight:700;line-height:1.05;max-width:860px;margin:0 auto 18px;text-transform:uppercase;letter-spacing:.02em;color:#fff;}
+.hero h1 span{color:#e85d04;}
+.hero-sub{font-size:1.15rem;color:#aaa;max-width:640px;margin:0 auto 36px;line-height:1.7;}
+.hero-sub strong{color:#fff;}
+.video-wrap{max-width:740px;margin:0 auto 40px;background:#000;border:2px solid #e85d04;border-radius:6px;overflow:hidden;}
+.video-wrap video{width:100%;display:block;}
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.btn-main{display:inline-block;background:#e85d04;color:#fff;font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;padding:18px 48px;border-radius:4px;letter-spacing:.08em;text-transform:uppercase;}
+.btn-main:hover{background:#c2410c;}
+.secure-note{color:#666;font-size:.82rem;display:flex;align-items:center;gap:6px;}
+
+/* PROBLEM SECTION */
+.problem{background:#0a0a0a;border-top:1px solid #222;border-bottom:1px solid #222;padding:60px 24px;}
+.section-inner{max-width:860px;margin:0 auto;}
+.section-label{font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.15em;color:#e85d04;text-transform:uppercase;margin-bottom:8px;}
+h2{font-family:'Oswald',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:700;line-height:1.1;text-transform:uppercase;margin-bottom:20px;color:#fff;}
+h2 span{color:#e85d04;}
+p{color:#aaa;line-height:1.75;margin-bottom:14px;font-size:1rem;}
+p strong{color:#f0f0f0;}
+.mistake-list{display:grid;gap:2px;margin:24px 0;}
+.mistake{background:#0f0f0f;border-left:4px solid #e85d04;padding:14px 20px;display:flex;gap:14px;align-items:flex-start;}
+.mistake-icon{color:#e85d04;font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.mistake-text{font-size:.95rem;color:#ccc;line-height:1.6;}
+.mistake-text strong{color:#fff;}
+
+/* PROOF */
+.proof{background:#000;padding:60px 24px;border-bottom:3px solid #e85d04;}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#222;border:1px solid #222;border-radius:4px;overflow:hidden;margin:32px 0;}
+.proof-item{background:#0a0a0a;padding:28px 24px;text-align:center;}
+.proof-num{font-family:'Oswald',sans-serif;font-size:2.8rem;font-weight:700;color:#e85d04;line-height:1;}
+.proof-label{font-size:.85rem;color:#666;margin-top:6px;text-transform:uppercase;letter-spacing:.06em;}
+
+/* MODULES */
+.modules{background:#0a0a0a;padding:60px 24px;}
+.module{display:flex;gap:20px;align-items:flex-start;padding:24px;background:#111;border:1px solid #1a1a1a;border-left:4px solid #e85d04;border-radius:0 6px 6px 0;margin-bottom:12px;}
+.mod-num{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:#e85d04;flex-shrink:0;line-height:1;width:50px;}
+.mod-content h3{font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+.mod-content p{color:#888;font-size:.92rem;margin:0;}
+
+/* OFFER BOX */
+.offer{background:#000;border:3px solid #e85d04;border-radius:6px;padding:48px 36px;text-align:center;max-width:600px;margin:0 auto;}
+.offer-label{font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.15em;color:#e85d04;text-transform:uppercase;margin-bottom:10px;}
+.offer-price{font-family:'Oswald',sans-serif;font-size:5rem;font-weight:700;color:#e85d04;line-height:1;}
+.offer-was{font-size:.95rem;color:#555;text-decoration:line-through;margin-bottom:4px;}
+.offer-desc{color:#888;font-size:.92rem;margin:16px 0 28px;}
+.guarantee{background:#0a0a0a;border:1px solid #1a1a1a;padding:16px 20px;border-radius:4px;font-size:.85rem;color:#666;margin-top:20px;}
+.guarantee strong{color:#e85d04;}
+
+/* FINAL CTA */
+.final-cta{background:#e85d04;padding:70px 24px;text-align:center;}
+.final-cta h2{color:#fff;font-family:'Oswald',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:14px;}
+.final-cta p{color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 32px;font-size:1.05rem;}
+.btn-white{display:inline-block;background:#fff;color:#e85d04;font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;padding:18px 48px;border-radius:4px;letter-spacing:.08em;text-transform:uppercase;}
+.btn-white:hover{background:#f9f9f9;}
+
+footer{background:#000;border-top:1px solid #1a1a1a;padding:24px;text-align:center;font-size:.78rem;color:#444;}
+footer a{color:#e85d04;}
+</style>
+</head>
+<body>
+
+<div class="alert">⚠️ FOUNDER PRICING ENDS SOON — <em>$47 TODAY / $97 AFTER LAUNCH</em> — DON'T MISS IT</div>
+
+<nav>
+<div class="logo">FLIP <em>AND</em> CLOSE</div>
+<a href="${STRIPE_LINK}" class="nav-btn">GET ACCESS — $47</a>
+</nav>
+
+<section class="hero">
+<div class="kicker">Domain Auction Blueprint</div>
+<h1>Stop Listing Domains<br>And <span>Hoping For The Best.</span></h1>
+<p class="hero-sub">The 5-step system that gets your domains <strong>in front of the right buyers, priced correctly, and sold at auction</strong> — without guessing.</p>
+<div class="video-wrap">
+  <video controls preload="metadata" style="width:100%;display:block;">
+    <source src="${VSL}" type="video/mp4">
+  </video>
+</div>
+<div class="hero-cta-wrap">
+  <a href="${STRIPE_LINK}" class="btn-main">YES — I WANT INSTANT ACCESS FOR $47 →</a>
+  <span class="secure-note">🔒 Secure checkout &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; 30-day guarantee</span>
+</div>
+</section>
+
+<section class="problem">
+<div class="section-inner">
+<div class="section-label">The Real Problem</div>
+<h2>You're Not Losing Money<br>On The <span>Buy Side.</span></h2>
+<p>You find solid domains. You register them at the right price. You've done your research. So why are your auctions underperforming?</p>
+<p>Because <strong>the selling side of domain flipping is where 90% of the money is left on the table.</strong> And almost nobody teaches it.</p>
+<div class="mistake-list">
+${[
+  ["Wrong platform","You listed on GoDaddy when your domain was a Sedo buyer. Different platforms have completely different buyer pools."],
+  ["Wrong reserve price","You set it too high and killed bidder interest. Or too low and left $400 on the table."],
+  ["Weak listing copy","Your description described the domain instead of selling the vision. Buyers skipped it."],
+  ["No outbound demand","You waited for buyers to find you instead of finding them first."],
+  ["Wrong timing","You launched mid-quarter. The right buyer pool was dormant."]
+].map(([t,d])=>`<div class="mistake"><div class="mistake-icon">✕</div><div class="mistake-text"><strong>${t}:</strong> ${d}</div></div>`).join('')}
+</div>
+<p>Fix all five. Watch your results change.</p>
+</div>
+</section>
+
+<section class="proof">
+<div class="section-inner">
+<div class="section-label">Why It Works</div>
+<h2>The Numbers Don't Lie</h2>
+<div class="proof-grid">
+<div class="proof-item"><div class="proof-num">5</div><div class="proof-label">Modules</div></div>
+<div class="proof-item"><div class="proof-num">30</div><div class="proof-label">Copy Templates</div></div>
+<div class="proof-item"><div class="proof-num">12</div><div class="proof-label">Month Calendar</div></div>
+<div class="proof-item"><div class="proof-num">10×</div><div class="proof-label">Avg Return Potential</div></div>
+</div>
+<p style="text-align:center;color:#555;font-size:.88rem;">One domain sold right vs wrong = the difference between $50 and $500. This blueprint closes that gap.</p>
+</div>
+</section>
+
+<section class="modules">
+<div class="section-inner">
+<div class="section-label">What You Get</div>
+<h2>5 Modules. Zero Fluff.<br><span>Pure System.</span></h2>
+${[
+  ["01","Platform Selection Mastery","Match every domain type to the platform with the right buyer pool. Stop sending traffic to the wrong room."],
+  ["02","The Reserve Price Formula","Data-backed pricing based on domain type, keyword volume, and comparable sales. Set it right every time."],
+  ["03","Auction Listing Copywriting","The 7-element framework for descriptions that sell the business vision — not just the domain name. Includes 30 templates."],
+  ["04","The Outbound Buyer Finder","Identify 5-10 end-user prospects before your auction opens. Pre-seed demand. Create competition."],
+  ["05","Timing & Launch Strategy","The 12-month calendar that maps buyer activity by domain type. Stop listing at the wrong time."]
+].map(([n,t,d])=>`<div class="module"><div class="mod-num">${n}</div><div class="mod-content"><h3>${t}</h3><p>${d}</p></div></div>`).join('')}
+</div>
+</section>
+
+<section style="padding:60px 24px;background:#000;">
+<div class="section-inner" style="text-align:center;">
+<div class="section-label" style="margin-bottom:24px;">Your Investment</div>
+<div class="offer">
+<div class="offer-label">Founder Pricing — Limited Time</div>
+<div class="offer-was">Regular price: $97</div>
+<div class="offer-price">$47</div>
+<div class="offer-desc">One-time payment. Instant access. Yours forever.</div>
+<a href="${STRIPE_LINK}" class="btn-main" style="display:block;">GET INSTANT ACCESS NOW →</a>
+<div class="guarantee"><strong>30-Day Money-Back Guarantee.</strong> Go through the entire blueprint. If it's not worth every dollar, email us for a full refund — same day, no questions.</div>
+</div>
+</div>
+</section>
+
+<section class="final-cta">
+<h2>YOU'VE DONE THE HARD PART.<br>NOW CLOSE THE DEAL.</h2>
+<p>You've got the inventory. You know how to find domains. You just need the system to sell them right.</p>
+<a href="${STRIPE_LINK}" class="btn-white">GET FLIP AND CLOSE FOR $47 →</a>
+</section>
+
+<footer>
+<p>Flip And Close &copy; 2026 &nbsp;·&nbsp; <a href="mailto:support@nicelysupport.com">support@nicelysupport.com</a> &nbsp;·&nbsp; <a href="#">Privacy</a></p>
+</footer>
+</body>
+</html>
