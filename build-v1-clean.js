@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const STRIPE = 'https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H';
+
+const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Flip And Close â€” Domain Auction Blueprint</title>
+<title>Flip And Close \u2014 Domain Auction Blueprint</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -101,10 +104,10 @@ footer a{color:#475569;}
       <span class="logo-bottom">Domain Auction Blueprint</span>
     </div>
   </a>
-  <a href="https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H" class="nav-cta">Get Access &#8212; $47</a>
+  <a href="${STRIPE}" class="nav-cta">Get Access &#8212; $47</a>
 </nav>
 
-<div class="urgency-bar">&#9889; Founder Pricing Active &#8212; <span>$47 today only</span>. Goes to $97 when the timer hits zero. &nbsp;<a href="https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H">Get Access Now &#8594;</a></div>
+<div class="urgency-bar">&#9889; Founder Pricing Active &#8212; <span>$47 today only</span>. Goes to $97 when the timer hits zero. &nbsp;<a href="${STRIPE}">Get Access Now &#8594;</a></div>
 
 <section class="hero">
   <div class="eyebrow">Domain Auction Blueprint</div>
@@ -115,7 +118,7 @@ footer a{color:#475569;}
       <source src="/vsl-final.mp4" type="video/mp4">
     </video>
   </div>
-  <a href="https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H" class="btn-hero">Get The Flip And Close Blueprint &#8212; $47 &#8594;</a>
+  <a href="${STRIPE}" class="btn-hero">Get The Flip And Close Blueprint &#8212; $47 &#8594;</a>
   <p class="hero-note">&#128274; Instant access &middot; 30-day money-back guarantee &middot; No fluff, no filler</p>
 </section>
 
@@ -187,7 +190,7 @@ footer a{color:#475569;}
 <div class="mid-cta">
   <p style="color:#64748b;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Ready to get started?</p>
   <h3 style="font-size:1.4rem;font-weight:900;margin-bottom:20px;">Get The Full System &#8212; <span style="color:#f59e0b;">$47</span></h3>
-  <a href="https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H" style="display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#d97706,#f59e0b);color:#000;font-weight:900;font-size:1rem;border-radius:12px;">Yes &#8212; Get Instant Access &#8594;</a>
+  <a href="${STRIPE}" style="display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#d97706,#f59e0b);color:#000;font-weight:900;font-size:1rem;border-radius:12px;">Yes &#8212; Get Instant Access &#8594;</a>
   <p style="color:#475569;font-size:.75rem;margin-top:10px;">&#128274; Secure checkout &middot; 30-day guarantee</p>
 </div>
 
@@ -251,7 +254,7 @@ footer a{color:#475569;}
         <li><span class="check">&#10003;</span>Domain Description Formula</li>
         <li><span class="check">&#10003;</span>Lifetime access + all future updates</li>
       </ul>
-      <a href="https://buy.stripe.com/8x27sKeOI8O8baC9pz1oI0H" class="btn-buy">Get Instant Access &#8212; $47 &#8594;</a>
+      <a href="${STRIPE}" class="btn-buy">Get Instant Access &#8212; $47 &#8594;</a>
       <p style="margin-top:12px;color:#475569;font-size:.75rem;">&#128274; Secured by Stripe &middot; 30-Day Money-Back Guarantee</p>
     </div>
     <div class="guarantee-box">
@@ -270,4 +273,9 @@ footer a{color:#475569;}
   <p style="margin-top:8px;">&copy; 2026 Flip And Close. All rights reserved.</p>
 </footer>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync('./public/index.html', html, 'utf8');
+const count = (html.match(/buy\.stripe\.com/g)||[]).length;
+const bad = (html.match(/â€/g)||[]).length;
+console.log('Done. Stripe links:', count, '| Bad chars:', bad, '| Size:', html.length);
