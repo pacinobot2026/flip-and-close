@@ -1,44 +1,286 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Domain Pricing Calculator — Flip And Close</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:#0a0f1e;color:#fff;line-height:1.6;}a{color:inherit;text-decoration:none;}nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;}.logo-mark{display:flex;align-items:center;gap:12px;}.logo-icon{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;font-size:.75rem;font-weight:900;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.logo-text{display:flex;flex-direction:column;}.logo-top{font-size:.88rem;font-weight:900;color:#fff;}.logo-bottom{font-size:.58rem;font-weight:700;color:#f59e0b;letter-spacing:.08em;text-transform:uppercase;}.nav-links{display:flex;gap:4px;flex-wrap:wrap;}.nav-links a{color:#94a3b8;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:8px;transition:color .2s;}.nav-links a:hover{color:#fff;}.container{max-width:900px;margin:0 auto;padding:0 24px;}.section{padding:60px 24px;}.section-alt{background:#0d1422;}.eyebrow{color:#3b82f6;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:12px;}h2{font-size:1.4rem;font-weight:900;margin-bottom:12px;}h3{font-size:1rem;font-weight:800;margin-bottom:6px;}p{color:#94a3b8;line-height:1.7;margin-bottom:12px;}p strong{color:#fff;}.card{background:#0f1623;border:1px solid rgba(59,130,246,.12);border-radius:14px;padding:24px;}.tag{display:inline-block;background:rgba(59,130,246,.12);color:#60a5fa;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:999px;margin-bottom:8px;}.tag-gold{background:rgba(245,158,11,.1);color:#f59e0b;}.btn{display:inline-block;padding:13px 28px;border-radius:10px;font-weight:800;font-size:.88rem;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:opacity .2s;}.btn:hover{opacity:.85;}.btn-blue{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;}.btn-gold{background:linear-gradient(135deg,#d97706,#f59e0b);color:#000;}.btn-sm{padding:8px 18px;font-size:.78rem;}input,select,textarea{width:100%;background:#070c18;border:1px solid rgba(255,255,255,.1);color:#fff;padding:10px 14px;border-radius:9px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;}input:focus,select:focus{border-color:rgba(59,130,246,.5);}label{display:block;font-size:.78rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}footer{background:#070c18;border-top:1px solid rgba(255,255,255,.05);padding:28px 24px;text-align:center;color:#475569;font-size:.76rem;}</style></head><body><nav><a href="/members.html" class="logo-mark"><div class="logo-icon">F→C</div><div class="logo-text"><span class="logo-top">FLIP AND CLOSE</span><span class="logo-bottom">Domain Auction Blueprint</span></div></a><div class="nav-links"><a href="/members.html">Home</a><a href="/members.html#modules">Modules</a><a href="/members.html#bonuses">Bonuses</a><a href="/members.html#tools">Tools</a><a href="mailto:support@nicelysupport.com">Support</a></div></nav>
-<div class="section"><div class="container" style="max-width:700px;">
-<div class="eyebrow">Interactive Tool</div><h1>Domain Pricing Calculator</h1>
-<p>Enter your domain metrics. The calculator applies the Reserve Price Formula from Module 2 with real market multipliers.</p>
-<div class="card" style="margin-top:28px;">
-<div style="display:grid;gap:16px;">
-<div><label>Extension</label><select id="ext" onchange="calc()"><option value="1.0">.com (1.0x)</option><option value="0.3">.net (0.3x)</option><option value="0.25">.org (0.25x)</option><option value="0.15">.co (0.15x)</option><option value="0.1">Other (0.1x)</option></select></div>
-<div><label>Comparable Sales Median ($) — from NameBio</label><input id="comp" type="number" placeholder="500" oninput="calc()"/></div>
-<div><label>Domain Type</label><select id="dtype" onchange="calc()"><option value="0">Generic / Misc</option><option value="0.2">Exact-Match Keyword</option><option value="0.15">Geo Domain (City+Keyword)</option><option value="0.25">Short (under 8 chars)</option><option value="0.4">Expired with Backlinks</option><option value="0">Brandable (no keywords)</option></select></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-<div><label>Has Search Volume?</label><select id="sv" onchange="calc()"><option value="0">No</option><option value="0.1">Yes — under 1k/mo</option><option value="0.2">Yes — 1k-10k/mo</option><option value="0.3">Yes — over 10k/mo</option></select></div>
-<div><label>Age / History</label><select id="age" onchange="calc()"><option value="0">Fresh / New</option><option value="0.1">1-3 years old</option><option value="0.2">3-10 years old</option><option value="0.35">Expired with clean history</option></select></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Domain Pricing Calculator &#8212; Flip And Close</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#0a0f1e;color:#fff;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo-mark{display:flex;align-items:center;gap:12px;}
+.logo-icon{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;font-size:.75rem;font-weight:900;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-text{display:flex;flex-direction:column;}
+.logo-top{font-size:.88rem;font-weight:900;color:#fff;}
+.logo-bottom{font-size:.58rem;font-weight:700;color:#f59e0b;letter-spacing:.08em;text-transform:uppercase;}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{color:#94a3b8;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:8px;}
+.nav-links a:hover{color:#fff;}
+.page{padding:56px 24px 80px;max-width:740px;margin:0 auto;}
+.eyebrow{color:#3b82f6;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.subtitle{color:#94a3b8;font-size:1rem;line-height:1.7;margin-bottom:28px;}
+.card{background:#0f1623;border:1px solid rgba(59,130,246,.14);border-radius:16px;padding:28px;}
+label{display:block;font-size:.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+input,select{width:100%;background:#070c18;border:1px solid rgba(255,255,255,.1);color:#fff;padding:11px 14px;border-radius:9px;font-family:'Inter',sans-serif;font-size:.92rem;outline:none;margin-bottom:0;}
+input:focus,select:focus{border-color:rgba(59,130,246,.5);}
+input::placeholder{color:#334155;}
+.field{margin-bottom:18px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.examples{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.ex-btn{background:#0f1623;border:1px solid rgba(59,130,246,.2);color:#60a5fa;font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.ex-btn:hover{background:#1e3a8a;border-color:#3b82f6;}
+.btn-calc{width:100%;padding:15px;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;font-weight:900;font-size:1rem;border-radius:12px;border:none;cursor:pointer;font-family:'Inter',sans-serif;margin-top:8px;transition:opacity .2s;letter-spacing:.02em;}
+.btn-calc:hover{opacity:.88;}
+.result-box{margin-top:24px;background:#070c18;border:2px solid rgba(59,130,246,.25);border-radius:14px;padding:28px;animation:fadeIn .3s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;margin-bottom:20px;}
+.result-item .label{font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+.result-item .value{font-size:2rem;font-weight:900;line-height:1;}
+.result-item .sublabel{font-size:.7rem;color:#475569;margin-top:4px;}
+.bar{height:6px;border-radius:999px;background:#1e293b;margin:20px 0;position:relative;overflow:hidden;}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#1e40af,#3b82f6,#f59e0b);transition:width .5s ease;}
+.breakdown{background:#0a0f1e;border-radius:10px;padding:16px 18px;margin-top:4px;}
+.breakdown-row{display:flex;justify-content:space-between;font-size:.82rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.breakdown-row:last-child{border:none;font-weight:800;color:#fff;}
+.breakdown-row span:first-child{color:#94a3b8;}
+.breakdown-row span:last-child{color:#60a5fa;}
+.tip{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:14px 16px;margin-top:16px;font-size:.82rem;color:#fbbf24;line-height:1.6;}
+.tip strong{color:#f59e0b;}
+.empty{text-align:center;padding:32px 16px;color:#334155;}
+.empty .icon{font-size:2.5rem;margin-bottom:10px;}
+.empty p{font-size:.88rem;}
+footer{background:#070c18;border-top:1px solid rgba(255,255,255,.05);padding:24px;text-align:center;color:#475569;font-size:.76rem;}
+footer a{color:#3b82f6;}
+@media(max-width:560px){.result-grid{grid-template-columns:1fr;}.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/members.html" class="logo-mark">
+    <div class="logo-icon">F&#8594;C</div>
+    <div class="logo-text"><span class="logo-top">FLIP AND CLOSE</span><span class="logo-bottom">Domain Auction Blueprint</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="/members.html">Home</a>
+    <a href="/members.html#modules">Modules</a>
+    <a href="/members.html#tools">Tools</a>
+    <a href="mailto:support@nicelysupport.com">Support</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Interactive Tool</div>
+  <h1>Domain Pricing Calculator</h1>
+  <p class="subtitle">Enter your domain details below and click <strong>Calculate</strong> to get a data-backed reserve price, estimated value, and buy-it-now recommendation based on the Module 2 formula.</p>
+
+  <p style="font-size:.8rem;color:#475569;margin-bottom:10px;">&#128161; Try an example:</p>
+  <div class="examples">
+    <button class="ex-btn" onclick="loadExample('geo')">Geo Domain (.com)</button>
+    <button class="ex-btn" onclick="loadExample('keyword')">Exact-Match Keyword</button>
+    <button class="ex-btn" onclick="loadExample('brandable')">Brandable</button>
+    <button class="ex-btn" onclick="loadExample('aged')">Aged / Expired</button>
+    <button class="ex-btn" onclick="loadExample('short')">Short .com</button>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label>Domain Name (optional — for your reference)</label>
+      <input id="dname" type="text" placeholder="e.g. DenverPlumber.com"/>
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label>Extension</label>
+        <select id="ext">
+          <option value="1.0">.com (1.0x)</option>
+          <option value="0.35">.net (0.35x)</option>
+          <option value="0.3">.org (0.3x)</option>
+          <option value="0.2">.co (0.2x)</option>
+          <option value="0.12">.io (0.12x)</option>
+          <option value="0.1">Other (0.1x)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Domain Type</label>
+        <select id="dtype">
+          <option value="0.15">Geo Domain (City + Keyword)</option>
+          <option value="0.2">Exact-Match Keyword</option>
+          <option value="0.25">Short (under 8 chars)</option>
+          <option value="0.4">Expired with Backlinks</option>
+          <option value="0.0">Brandable (no exact keywords)</option>
+          <option value="0.0">Generic / Misc</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Comparable Sales Median ($) &#8212; search NameBio for similar domains</label>
+      <input id="comp" type="number" placeholder="e.g. 500" min="1" max="999999"/>
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label>Monthly Search Volume</label>
+        <select id="sv">
+          <option value="0">None / Unknown</option>
+          <option value="0.1">Under 1,000/mo</option>
+          <option value="0.2">1,000 &#8211; 10,000/mo</option>
+          <option value="0.3">Over 10,000/mo</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Domain Age / History</label>
+        <select id="age">
+          <option value="0">Fresh / Newly Registered</option>
+          <option value="0.1">1&#8211;3 Years Old</option>
+          <option value="0.2">3&#8211;10 Years Old</option>
+          <option value="0.35">Expired &#8212; Clean History</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Number of Words in Domain</label>
+      <select id="words">
+        <option value="0.1">1 word (premium)</option>
+        <option value="0.05" selected>2 words (standard)</option>
+        <option value="0">3 words (slight discount)</option>
+        <option value="-0.1">4+ words (significant discount)</option>
+      </select>
+    </div>
+
+    <button class="btn-calc" onclick="calc()">&#128200; Calculate My Domain Value</button>
+  </div>
+
+  <div id="result-area">
+    <div class="empty" style="margin-top:24px;">
+      <div class="icon">&#128200;</div>
+      <p>Fill in your domain details and click Calculate to see your pricing recommendation.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:28px;font-size:.8rem;"><a href="/members.html#tools" style="color:#3b82f6;">&#8592; Back to Member Area</a></p>
 </div>
-</div>
-<div id="result" style="margin-top:24px;background:#070c18;border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:24px;display:none;">
-<h3 style="color:#60a5fa;margin-bottom:16px;">Your Pricing Range</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
-<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Estimated Value</div><div id="val" style="font-size:1.8rem;font-weight:900;color:#fff;"></div></div>
-<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Reserve Price (60%)</div><div id="reserve" style="font-size:1.8rem;font-weight:900;color:#10b981;"></div></div>
-<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Buy-It-Now (140%)</div><div id="bin" style="font-size:1.8rem;font-weight:900;color:#f59e0b;"></div></div>
-</div>
-<p style="margin-top:16px;font-size:.78rem;color:#475569;">Based on comparable sales data + domain type multipliers from Module 2. Always cross-check against recent NameBio sales before listing.</p>
-</div>
-</div>
-<p style="margin-top:20px;font-size:.8rem;color:#475569;"><a href="/members.html#tools" style="color:#3b82f6;">← Back to Member Area</a></p>
-</div></div>
+
+<footer>
+  <p>Flip And Close &copy; 2026 &nbsp;&middot;&nbsp; <a href="mailto:support@nicelysupport.com">support@nicelysupport.com</a></p>
+</footer>
+
 <script>
-function calc(){
-  const comp=parseFloat(document.getElementById('comp').value)||0;
-  if(!comp){document.getElementById('result').style.display='none';return;}
-  const ext=parseFloat(document.getElementById('ext').value);
-  const dtype=parseFloat(document.getElementById('dtype').value);
-  const sv=parseFloat(document.getElementById('sv').value);
-  const age=parseFloat(document.getElementById('age').value);
-  const val=Math.round(comp*ext*(1+dtype+sv+age));
-  const reserve=Math.round(val*0.6);
-  const bin=Math.round(val*1.4);
-  document.getElementById('val').textContent='$'+val.toLocaleString();
-  document.getElementById('reserve').textContent='$'+reserve.toLocaleString();
-  document.getElementById('bin').textContent='$'+bin.toLocaleString();
-  document.getElementById('result').style.display='block';
+const EXAMPLES = {
+  geo: {name:'DenverPlumber.com', ext:'1.0', dtype:'0.15', comp:480, sv:'0.2', age:'0.1', words:'0.05'},
+  keyword: {name:'BestCoffeeGrinder.com', ext:'1.0', dtype:'0.2', comp:650, sv:'0.3', age:'0.0', words:'0.05'},
+  brandable: {name:'Zenvora.com', ext:'1.0', dtype:'0.0', comp:300, sv:'0', age:'0.0', words:'0.1'},
+  aged: {name:'HomeLoanAdvice.com', ext:'1.0', dtype:'0.2', comp:900, sv:'0.2', age:'0.35', words:'0.05'},
+  short: {name:'Rexa.com', ext:'1.0', dtype:'0.25', comp:1200, sv:'0', age:'0.2', words:'0.1'}
+};
+
+function loadExample(key) {
+  const e = EXAMPLES[key];
+  document.getElementById('dname').value = e.name;
+  document.getElementById('ext').value = e.ext;
+  document.getElementById('dtype').value = e.dtype;
+  document.getElementById('comp').value = e.comp;
+  document.getElementById('sv').value = e.sv;
+  document.getElementById('age').value = e.age;
+  document.getElementById('words').value = e.words;
+  calc();
 }
-</script><footer><p>Flip And Close &copy; 2026 &middot; <a href="mailto:support@nicelysupport.com" style="color:#3b82f6;">support@nicelysupport.com</a></p></footer></body></html>
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function calc() {
+  const comp = parseFloat(document.getElementById('comp').value) || 0;
+  if (!comp || comp < 1) {
+    document.getElementById('result-area').innerHTML = '<div class="empty" style="margin-top:24px;"><div class="icon">&#9888;</div><p>Please enter a comparable sales median to calculate.</p></div>';
+    return;
+  }
+
+  const ext   = parseFloat(document.getElementById('ext').value);
+  const dtype = parseFloat(document.getElementById('dtype').value);
+  const sv    = parseFloat(document.getElementById('sv').value);
+  const age   = parseFloat(document.getElementById('age').value);
+  const words = parseFloat(document.getElementById('words').value);
+  const name  = document.getElementById('dname').value || 'Your Domain';
+
+  const multiplier = ext * (1 + dtype + sv + age + words);
+  const estValue   = Math.round(comp * multiplier);
+  const reserve    = Math.round(estValue * 0.6);
+  const bin        = Math.round(estValue * 1.45);
+  const floor      = Math.round(estValue * 0.4);
+
+  // Confidence score (rough)
+  const confidence = Math.min(95, Math.round(55 + (sv > 0 ? 15 : 0) + (age > 0 ? 10 : 0) + (ext === 1.0 ? 10 : 0) + (dtype > 0 ? 10 : 0)));
+
+  const tips = [];
+  if (ext < 1.0) tips.push('<strong>Extension discount applied:</strong> Non-.com domains typically sell for significantly less. Consider this when setting expectations.');
+  if (sv === '0' || sv === 0) tips.push('<strong>No search volume entered:</strong> If your keyword has monthly searches, add it above &#8212; it increases value by 10&#8211;30%.');
+  if (age === '0' || age === 0) tips.push('<strong>Fresh domain:</strong> Aged domains command higher prices. If this domain has any history, check archive.org and update the age field.');
+  if (estValue < 100) tips.push('<strong>Low comparable sales:</strong> Make sure you searched NameBio for the closest match. Try broader keyword searches to find better comps.');
+  if (!tips.length) tips.push('<strong>Strong signals:</strong> Your domain has multiple value indicators. Use the reserve price as your auction floor.');
+
+  document.getElementById('result-area').innerHTML = \`
+    <div class="result-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <div>
+          <div style="font-size:.72rem;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Pricing Report</div>
+          <div style="font-size:1.1rem;font-weight:800;color:#e2e8f0;">\${name}</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;">Confidence</div>
+          <div style="font-size:1.4rem;font-weight:900;color:\${confidence > 75 ? '#10b981' : confidence > 55 ? '#f59e0b' : '#f87171'}">\${confidence}%</div>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-item">
+          <div class="label">Estimated Value</div>
+          <div class="value" style="color:#fff;">\${fmt(estValue)}</div>
+          <div class="sublabel">Market estimate</div>
+        </div>
+        <div class="result-item">
+          <div class="label">Reserve Price</div>
+          <div class="value" style="color:#10b981;">\${fmt(reserve)}</div>
+          <div class="sublabel">Set as your floor</div>
+        </div>
+        <div class="result-item">
+          <div class="label">Buy-It-Now</div>
+          <div class="value" style="color:#f59e0b;">\${fmt(bin)}</div>
+          <div class="sublabel">Optional BIN</div>
+        </div>
+      </div>
+
+      <div class="bar"><div class="bar-fill" style="width:\${Math.min(100,(estValue/2000)*100)}%"></div></div>
+
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Base comparable median</span><span>\${fmt(comp)}</span></div>
+        <div class="breakdown-row"><span>Extension multiplier</span><span>\${ext}x</span></div>
+        <div class="breakdown-row"><span>Domain type bonus</span><span>+\${Math.round(dtype*100)}%</span></div>
+        <div class="breakdown-row"><span>Search volume bonus</span><span>+\${Math.round(sv*100)}%</span></div>
+        <div class="breakdown-row"><span>Age / history bonus</span><span>+\${Math.round(age*100)}%</span></div>
+        <div class="breakdown-row"><span>Word count factor</span><span>+\${Math.round(words*100)}%</span></div>
+        <div class="breakdown-row"><span>Total multiplier</span><span>\${multiplier.toFixed(2)}x</span></div>
+        <div class="breakdown-row" style="margin-top:6px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);"><span>Estimated value</span><span style="color:#fff;">\${fmt(estValue)}</span></div>
+      </div>
+
+      <div class="tip">
+        \${tips.map(t => '<p style="margin-bottom:6px;">&#128161; '+t+'</p>').join('')}
+      </div>
+
+      <div style="margin-top:20px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 16px;font-size:.8rem;color:#64748b;line-height:1.7;">
+        <strong style="color:#60a5fa;">How to use this:</strong><br>
+        Set your <strong style="color:#10b981;">reserve at \${fmt(reserve)}</strong> to attract early bids while protecting your floor.
+        Use <strong style="color:#f59e0b;">\${fmt(bin)}</strong> as a Buy-It-Now for buyers who want to skip the auction.
+        Anything below <strong style="color:#f87171;">\${fmt(floor)}</strong> is underselling &#8212; don't accept it.
+      </div>
+    </div>
+  \`;
+}
+</script>
+</body>
+</html>
