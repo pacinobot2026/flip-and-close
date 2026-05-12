@@ -1,0 +1,11 @@
+﻿</div></div><p style="margin-top:20px;"><a href="/members.html#bonuses" style="color:#3b82f6;font-size:.85rem;">&larr; Back to Member Area</a></p></div></div><style>@media print{nav,footer,button{display:none!important;}body{background:#fff!important;color:#000!important;}}</style>`);
+
+const descFile = buyerFinder;
+
+// Write files
+fs.mkdirSync("./public/bonuses", {recursive:true});
+fs.writeFileSync("./public/bonuses/buyer-finder.html", buyerFinder);
+fs.writeFileSync("./public/bonuses/description-formula.html", descFormula + ending);
+
+console.log("Bonus pages written.");
+
