@@ -1,0 +1,116 @@
+{"flows":[
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eYour access to the Flip And Close Blueprint is ready. Everything is waiting for you inside.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/members.html\u0027\u003eClick here to access the member area\u003c/a\u003e\u003c/p\u003e\u003cp\u003eStart with Module 1 \u0026mdash; Platform Selection. It\u0027s the foundation everything else builds on. Most people get this wrong and it costs them every auction.\u003c/p\u003e\u003cp\u003eIf you have any questions, reply to this email and I\u0027ll get back to you personally.\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. Don\u0027t skip Module 4 (Outbound Buyer Finder). That\u0027s the one nobody else is teaching and it will change how your next auction goes. \u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-4.html\u0027\u003eGo there now\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "You\u0027re in. Here\u0027s your access to Flip And Close.",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  0,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  1,
+        "type":  "timer",
+        "index":  1
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eJust checking in. Module 1 \u0026mdash; Platform Selection \u0026mdash; takes about 12 minutes and will immediately tell you if your current domains are listed on the right platform.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-1.html\u0027\u003eStart Module 1 here\u003c/a\u003e\u003c/p\u003e\u003cp\u003eMost people who go through this realize they\u0027ve been listing on the wrong platform. That single fix changes everything.\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. The Domain Pricing Calculator is also live and ready to use: \u003ca href=\u0027https://flip-and-close.vercel.app/tools/pricing-calculator.html\u0027\u003eUse it here\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "Did you start? (Module 1 takes 12 minutes)",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  2,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  2,
+        "type":  "timer",
+        "index":  3
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eHere\u0027s the thing most flippers get wrong on auction listings: they describe the domain instead of selling the vision.\u003c/p\u003e\u003cp\u003eBuyers don\u0027t buy domain names. They buy what the domain represents for their business.\u003c/p\u003e\u003cp\u003eModule 3 covers this in detail \u0026mdash; and you get 30 done-for-you templates that do the selling for you.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-3.html\u0027\u003eGo to Module 3 now\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. The 30 listing templates are in the member area: \u003ca href=\u0027https://flip-and-close.vercel.app/bonuses/listing-templates.html\u0027\u003eAccess them here\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "The listing copy mistake killing your auctions",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  4,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  4,
+        "type":  "timer",
+        "index":  5
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eBy now you should have been through the first four modules. If you haven\u0027t gotten to Module 4 yet \u0026mdash; that\u0027s the one I want you to focus on this week.\u003c/p\u003e\u003cp\u003eThe Outbound Buyer Finder is the difference between hoping someone finds your listing and actively creating competition before your auction opens.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-4.html\u0027\u003eGo to Module 4\u003c/a\u003e\u003c/p\u003e\u003cp\u003eTry it on one domain this week. Even one outreach message before your next auction changes the dynamic.\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. Your full member area is here: \u003ca href=\u0027https://flip-and-close.vercel.app/members.html\u0027\u003eAccess everything\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "Have you tried the Outbound Buyer Finder yet?",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  6,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  7,
+        "type":  "timer",
+        "index":  7
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eTwo weeks in. If you\u0027ve gone through the modules and applied even one thing \u0026mdash; you should have at minimum repriced some domains or rewritten a listing.\u003c/p\u003e\u003cp\u003eIf you haven\u0027t had your first auction win yet \u0026mdash; go back to the Reserve Price Formula in Module 2. That\u0027s usually where the bottleneck is.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-2.html\u0027\u003eModule 2 \u0026mdash; Reserve Price Formula\u003c/a\u003e\u003c/p\u003e\u003cp\u003eAnd use the calculator to double-check your pricing: \u003ca href=\u0027https://flip-and-close.vercel.app/tools/pricing-calculator.html\u0027\u003ePricing Calculator\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. Reply and tell me how your first auction went. I read every reply.\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "You should have your first auction win by now",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  8,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  7,
+        "type":  "timer",
+        "index":  9
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eModule 5 is the one most people skip because it seems like a detail. It\u0027s not.\u003c/p\u003e\u003cp\u003eListing a domain at the wrong time of year, wrong day of the week, or wrong time of day costs you real money in missed bids.\u003c/p\u003e\u003cp\u003eThe 12-month auction calendar in Module 5 tells you exactly when to list each type of domain for maximum buyer engagement.\u003c/p\u003e\u003cp\u003e\u003ca href=\u0027https://flip-and-close.vercel.app/modules/module-5.html\u0027\u003eGo to Module 5 now\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. Everything you need is still in your member area: \u003ca href=\u0027https://flip-and-close.vercel.app/members.html\u0027\u003eAccess here\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "The timing module most people skip (don\u0027t)",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  10,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    },
+    {
+        "days":  9,
+        "type":  "timer",
+        "index":  11
+    },
+    {
+        "html_content":  "\u003cp\u003eHey {{firstName}},\u003c/p\u003e\u003cp\u003eYou\u0027ve had the Flip And Close Blueprint for 30 days. By now you should have listed at least one domain using the system \u0026mdash; with the right platform, the right reserve, the right copy, and pre-seeded buyer demand.\u003c/p\u003e\u003cp\u003eI\u0027d love to hear how it went.\u003c/p\u003e\u003cp\u003eReply to this email with your result \u0026mdash; even if it\u0027s a small win. Every closed domain counts.\u003c/p\u003e\u003cp\u003eAnd if you want to take this further \u0026mdash; I\u0027m building something for serious domain investors who want to broker other people\u0027s portfolios for commission. No inventory required. Reply \u0027NEXT\u0027 if you want to be first to hear about it.\u003c/p\u003e\u003cp\u003e\u0026mdash; Chad\u003c/p\u003e\u003cp\u003eP.S. Your member area is always here: \u003ca href=\u0027https://flip-and-close.vercel.app/members.html\u0027\u003eFlip And Close Member Area\u003c/a\u003e\u003c/p\u003e",
+        "from_name":  "Chad",
+        "type":  "email",
+        "smtpAccountId":  "668854e8cfe6ae024a58ef72",
+        "subject":  "30 days in. How did it go?",
+        "domainId":  "6688551acfe6ae024a58f9f6",
+        "smtpIntegrationId":  "628e75aa84279536ff4eb41a",
+        "index":  12,
+        "reply_to":  "support@nicelysupport.com",
+        "from_email":  "chad@mail.nicelysupport.com"
+    }
+]}

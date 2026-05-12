@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Domain Pricing Calculator — Flip And Close</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:#0a0f1e;color:#fff;line-height:1.6;}a{color:inherit;text-decoration:none;}nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;}.logo-mark{display:flex;align-items:center;gap:12px;}.logo-icon{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;font-size:.75rem;font-weight:900;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.logo-text{display:flex;flex-direction:column;}.logo-top{font-size:.88rem;font-weight:900;color:#fff;}.logo-bottom{font-size:.58rem;font-weight:700;color:#f59e0b;letter-spacing:.08em;text-transform:uppercase;}.nav-links{display:flex;gap:4px;flex-wrap:wrap;}.nav-links a{color:#94a3b8;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:8px;transition:color .2s;}.nav-links a:hover{color:#fff;}.container{max-width:900px;margin:0 auto;padding:0 24px;}.section{padding:60px 24px;}.section-alt{background:#0d1422;}.eyebrow{color:#3b82f6;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:12px;}h2{font-size:1.4rem;font-weight:900;margin-bottom:12px;}h3{font-size:1rem;font-weight:800;margin-bottom:6px;}p{color:#94a3b8;line-height:1.7;margin-bottom:12px;}p strong{color:#fff;}.card{background:#0f1623;border:1px solid rgba(59,130,246,.12);border-radius:14px;padding:24px;}.tag{display:inline-block;background:rgba(59,130,246,.12);color:#60a5fa;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:999px;margin-bottom:8px;}.tag-gold{background:rgba(245,158,11,.1);color:#f59e0b;}.btn{display:inline-block;padding:13px 28px;border-radius:10px;font-weight:800;font-size:.88rem;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:opacity .2s;}.btn:hover{opacity:.85;}.btn-blue{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;}.btn-gold{background:linear-gradient(135deg,#d97706,#f59e0b);color:#000;}.btn-sm{padding:8px 18px;font-size:.78rem;}input,select,textarea{width:100%;background:#070c18;border:1px solid rgba(255,255,255,.1);color:#fff;padding:10px 14px;border-radius:9px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;}input:focus,select:focus{border-color:rgba(59,130,246,.5);}label{display:block;font-size:.78rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}footer{background:#070c18;border-top:1px solid rgba(255,255,255,.05);padding:28px 24px;text-align:center;color:#475569;font-size:.76rem;}</style></head><body><nav><a href="/members.html" class="logo-mark"><div class="logo-icon">F→C</div><div class="logo-text"><span class="logo-top">FLIP AND CLOSE</span><span class="logo-bottom">Domain Auction Blueprint</span></div></a><div class="nav-links"><a href="/members.html">Home</a><a href="/members.html#modules">Modules</a><a href="/members.html#bonuses">Bonuses</a><a href="/members.html#tools">Tools</a><a href="mailto:support@nicelysupport.com">Support</a></div></nav>
+<div class="section"><div class="container" style="max-width:700px;">
+<div class="eyebrow">Interactive Tool</div><h1>Domain Pricing Calculator</h1>
+<p>Enter your domain metrics. The calculator applies the Reserve Price Formula from Module 2 with real market multipliers.</p>
+<div class="card" style="margin-top:28px;">
+<div style="display:grid;gap:16px;">
+<div><label>Extension</label><select id="ext" onchange="calc()"><option value="1.0">.com (1.0x)</option><option value="0.3">.net (0.3x)</option><option value="0.25">.org (0.25x)</option><option value="0.15">.co (0.15x)</option><option value="0.1">Other (0.1x)</option></select></div>
+<div><label>Comparable Sales Median ($) — from NameBio</label><input id="comp" type="number" placeholder="500" oninput="calc()"/></div>
+<div><label>Domain Type</label><select id="dtype" onchange="calc()"><option value="0">Generic / Misc</option><option value="0.2">Exact-Match Keyword</option><option value="0.15">Geo Domain (City+Keyword)</option><option value="0.25">Short (under 8 chars)</option><option value="0.4">Expired with Backlinks</option><option value="0">Brandable (no keywords)</option></select></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+<div><label>Has Search Volume?</label><select id="sv" onchange="calc()"><option value="0">No</option><option value="0.1">Yes — under 1k/mo</option><option value="0.2">Yes — 1k-10k/mo</option><option value="0.3">Yes — over 10k/mo</option></select></div>
+<div><label>Age / History</label><select id="age" onchange="calc()"><option value="0">Fresh / New</option><option value="0.1">1-3 years old</option><option value="0.2">3-10 years old</option><option value="0.35">Expired with clean history</option></select></div>
+</div>
+</div>
+<div id="result" style="margin-top:24px;background:#070c18;border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:24px;display:none;">
+<h3 style="color:#60a5fa;margin-bottom:16px;">Your Pricing Range</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
+<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Estimated Value</div><div id="val" style="font-size:1.8rem;font-weight:900;color:#fff;"></div></div>
+<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Reserve Price (60%)</div><div id="reserve" style="font-size:1.8rem;font-weight:900;color:#10b981;"></div></div>
+<div><div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Buy-It-Now (140%)</div><div id="bin" style="font-size:1.8rem;font-weight:900;color:#f59e0b;"></div></div>
+</div>
+<p style="margin-top:16px;font-size:.78rem;color:#475569;">Based on comparable sales data + domain type multipliers from Module 2. Always cross-check against recent NameBio sales before listing.</p>
+</div>
+</div>
+<p style="margin-top:20px;font-size:.8rem;color:#475569;"><a href="/members.html#tools" style="color:#3b82f6;">← Back to Member Area</a></p>
+</div></div>
+<script>
+function calc(){
+  const comp=parseFloat(document.getElementById('comp').value)||0;
+  if(!comp){document.getElementById('result').style.display='none';return;}
+  const ext=parseFloat(document.getElementById('ext').value);
+  const dtype=parseFloat(document.getElementById('dtype').value);
+  const sv=parseFloat(document.getElementById('sv').value);
+  const age=parseFloat(document.getElementById('age').value);
+  const val=Math.round(comp*ext*(1+dtype+sv+age));
+  const reserve=Math.round(val*0.6);
+  const bin=Math.round(val*1.4);
+  document.getElementById('val').textContent='$'+val.toLocaleString();
+  document.getElementById('reserve').textContent='$'+reserve.toLocaleString();
+  document.getElementById('bin').textContent='$'+bin.toLocaleString();
+  document.getElementById('result').style.display='block';
+}
+</script><footer><p>Flip And Close &copy; 2026 &middot; <a href="mailto:support@nicelysupport.com" style="color:#3b82f6;">support@nicelysupport.com</a></p></footer></body></html>
